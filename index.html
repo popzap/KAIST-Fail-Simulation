@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애도 유예 도시 | 2036 Digital Mourning Visual Novel</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="noise-bg"></div>
+
+    <!-- GAME CONTAINER -->
+    <div class="vn-container" id="vn-container">
+        
+        <!-- TITLE SCREEN -->
+        <div class="title-screen active" id="title-screen">
+            <div class="title-glow"></div>
+            <div class="title-content">
+                <p class="title-sub">KAIST AIx실패 공모전 시뮬레이션</p>
+                <h1 class="title-main">애도하지 못하는 도시<br><span class="title-eng">DEFERRED GRIEF</span></h1>
+                <p class="title-desc">"2036년, 우리는 왜 유령들과 헤어지지 못했는가?"</p>
+                <button class="start-btn" id="start-btn">시뮬레이션 시작</button>
+            </div>
+            <div class="title-footer">
+                © 2026 MINISTRY OF DIGITAL DIGNITY. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+
+        <!-- PLAY SCREEN (Hidden initially) -->
+        <div class="play-screen" id="play-screen">
+            
+            <!-- STAGE (Background Image & Hologram) -->
+            <div class="vn-stage" id="vn-stage">
+                <!-- Grid Overlay to give digital feel -->
+                <div class="digital-grid"></div>
+                <!-- Hologram flickering layer -->
+                <div class="hologram-flicker" id="hologram-flicker"></div>
+            </div>
+
+            <!-- FLOATING STATS PANEL -->
+            <div class="vn-stats">
+                <div class="stat-item" id="stat-mourning">
+                    <span class="stat-label">공동체 애도율</span>
+                    <div class="stat-bar-container"><div class="stat-bar" style="width: 32%"></div></div>
+                    <span class="stat-value">32%</span>
+                </div>
+                <div class="stat-item" id="stat-dependent">
+                    <span class="stat-label">가상 의존도</span>
+                    <div class="stat-bar-container"><div class="stat-bar" style="width: 45%; background: var(--neon-purple)"></div></div>
+                    <span class="stat-value">45%</span>
+                </div>
+                <div class="stat-item" id="stat-compliance">
+                    <span class="stat-label">법규 준수율</span>
+                    <div class="stat-bar-container"><div class="stat-bar" style="width: 38%"></div></div>
+                    <span class="stat-value">38%</span>
+                </div>
+            </div>
+
+            <!-- CHOICES OVERLAY (Appears at branch points) -->
+            <div class="choices-overlay" id="choices-overlay">
+                <div class="choices-container" id="choices-container">
+                    <!-- Choice buttons dynamically rendered here -->
+                </div>
+            </div>
+
+            <!-- DIALOG CONTAINER -->
+            <div class="dialog-container" id="dialog-container">
+                <div class="speaker-tag" id="speaker-tag">SYSTEM</div>
+                <div class="dialog-box" id="dialog-box">
+                    <p class="dialog-text" id="dialog-text">단말기 접속 중...</p>
+                    <div class="next-indicator" id="next-indicator">▼</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ENDING SCREEN -->
+        <div class="ending-screen" id="ending-screen">
+            <div class="ending-content glassmorphism">
+                <h2 class="ending-type" id="ending-type">ENDING A</h2>
+                <h1 class="ending-title" id="ending-title">진정한 애도의 새벽</h1>
+                <p class="ending-desc" id="ending-desc">엔딩 내용 설명글...</p>
+
+                <!-- INCORRECT NOTE SUMMARY -->
+                <div class="ending-note">
+                    <div class="note-header">미래에서 온 오답노트 (2026)</div>
+                    <div class="note-grid">
+                        <div class="note-col">
+                            <h4>[예견된 실패]</h4>
+                            <p>AI 복제본으로 인한 애도 유예와 고인 신탁에 따른 사회의 노화 및 세대 단절.</p>
+                        </div>
+                        <div class="note-col">
+                            <h4>[원인 진단]</h4>
+                            <p>기술적 위로에만 집착한 상품화와 사후 데이터 소멸을 다루는 '디지털 죽음권'의 부재.</p>
+                        </div>
+                        <div class="note-col">
+                            <h4>[대응 방안]</h4>
+                            <p>'디지털 존엄사법(사후 복제 사전동의제)' 및 '점진적 소멸 프로토콜' 강제화.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <a href="proposal.md" class="btn primary-btn" target="_blank">기획안 원문 읽기</a>
+                    <button class="btn secondary-btn" id="restart-btn">다시 시작하기</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
