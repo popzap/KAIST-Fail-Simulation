@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- PLAY SCREEN (Hidden initially) -->
+        <!-- PLAY SCREEN -->
         <div class="play-screen" id="play-screen">
             
             <!-- STAGE (Background Image & Hologram) -->
@@ -42,7 +42,12 @@
                 <div class="hologram-flicker" id="hologram-flicker"></div>
             </div>
 
-            <!-- FLOATING STATS PANEL -->
+            <!-- TOP FLOATING CONTROLS -->
+            <div class="top-controls">
+                <button class="sound-btn" id="sound-btn">🔇 BGM OFF</button>
+            </div>
+
+            <!-- LEFT FLOATING STATS PANEL -->
             <div class="vn-stats">
                 <div class="stat-item" id="stat-mourning">
                     <span class="stat-label">공동체 애도율</span>
@@ -58,6 +63,14 @@
                     <span class="stat-label">법규 준수율</span>
                     <div class="stat-bar-container"><div class="stat-bar" style="width: 38%"></div></div>
                     <span class="stat-value">38%</span>
+                </div>
+            </div>
+
+            <!-- LEFT FLOATING DECISION LOG -->
+            <div class="decision-log" id="decision-log">
+                <div class="log-header">DECISION LOG (선택 이력)</div>
+                <div class="log-list" id="log-list">
+                    <div class="log-empty">기록된 선택이 없습니다.</div>
                 </div>
             </div>
 
@@ -79,35 +92,42 @@
 
         </div>
 
-        <!-- ENDING SCREEN -->
+        <!-- ENDING SCREEN (Integrated report) -->
         <div class="ending-screen" id="ending-screen">
             <div class="ending-content glassmorphism">
-                <h2 class="ending-type" id="ending-type">ENDING A</h2>
+                <div class="ending-header">
+                    <span class="report-stamp">OFFICIAL REPORT</span>
+                    <h2 class="ending-type" id="ending-type">ENDING A</h2>
+                </div>
+                
                 <h1 class="ending-title" id="ending-title">진정한 애도의 새벽</h1>
                 <p class="ending-desc" id="ending-desc">엔딩 내용 설명글...</p>
 
-                <!-- INCORRECT NOTE SUMMARY -->
-                <div class="ending-note">
-                    <div class="note-header">미래에서 온 오답노트 (2026)</div>
-                    <div class="note-grid">
-                        <div class="note-col">
-                            <h4>[예견된 실패]</h4>
-                            <p>AI 복제본으로 인한 애도 유예와 고인 신탁에 따른 사회의 노화 및 세대 단절.</p>
+                <!-- INTEGRATED INCORRECT NOTE REPORT -->
+                <div class="integrated-note">
+                    <div class="note-header-bar">
+                        <span class="terminal-dot"></span>
+                        <span class="note-title">2026년 미래 예방 진단 보고서 (오답노트)</span>
+                    </div>
+                    <div class="note-report-body">
+                        <div class="report-sec">
+                            <span class="sec-badge badge-red">실패 예견</span>
+                            <p>AI 사후 복제가 일상화되어 애도를 유예하고 고인의 가치가 미래 사회의 재산 및 자율 의사결정을 왜곡해 세대 교체가 마비됨.</p>
                         </div>
-                        <div class="note-col">
-                            <h4>[원인 진단]</h4>
-                            <p>기술적 위로에만 집착한 상품화와 사후 데이터 소멸을 다루는 '디지털 죽음권'의 부재.</p>
+                        <div class="report-sec">
+                            <span class="sec-badge badge-yellow">원인 분석</span>
+                            <p>기술적 위로에만 집착한 상업화가 진행되었으나, 사후 데이터 권리를 포괄하는 '디지털 죽음권'의 제도적 논의가 전무했음.</p>
                         </div>
-                        <div class="note-col">
-                            <h4>[대응 방안]</h4>
-                            <p>'디지털 존엄사법(사후 복제 사전동의제)' 및 '점진적 소멸 프로토콜' 강제화.</p>
+                        <div class="report-sec">
+                            <span class="sec-badge badge-green">처방 대책</span>
+                            <p>생전 동의를 필수로 하는 '디지털 존엄사법' 및 AI가 자연물처럼 소멸하도록 돕는 '디지털 반감기 프로토콜' 의무 법제화.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="btn-group">
                     <a href="proposal.md" class="btn primary-btn" target="_blank">기획안 원문 읽기</a>
-                    <button class="btn secondary-btn" id="restart-btn">다시 시작하기</button>
+                    <button class="btn secondary-btn" id="restart-btn">시뮬레이션 다시 시작</button>
                 </div>
             </div>
         </div>
