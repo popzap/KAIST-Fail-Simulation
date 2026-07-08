@@ -106,7 +106,7 @@ function toggleSound() {
     }
 }
 
-// WEB SPEECH API & WAV AUDIO DUBBING SYSTEM
+// WEB SPEECH API & MP3 AUDIO DUBBING SYSTEM
 const ttsSynth = window.speechSynthesis;
 let currentAudio = null;
 
@@ -124,10 +124,10 @@ function speakDialogue(text, speaker, audioPath) {
     if (speaker === "SYSTEM") return;
 
     if (audioPath) {
-        // Play high-quality pre-recorded Voice Actor WAV
+        // Play high-quality pre-recorded Voice Actor MP3
         currentAudio = new Audio(audioPath);
         currentAudio.play().catch(e => {
-            console.log("Voice Actor WAV failed or not loaded. Falling back to browser TTS:", e);
+            console.log("Voice Actor MP3 failed or not loaded. Falling back to browser TTS:", e);
             playTtsFallback(text, speaker);
         });
     } else {
@@ -231,25 +231,25 @@ const storyScript = [
     {
         speaker: "주인공",
         text: "…… 여기가 어디지…?",
-        audio: "audio/protagonist_1.wav"
+        audio: "audio/protagonist_1.mp3"
     },
     // 3
     {
         speaker: "의사",
         text: "정신이 드셨군요 환자분. 환자분은 10년만에 깨어나 현재 2036년입니다.",
-        audio: "audio/doctor_1.wav"
+        audio: "audio/doctor_1.mp3"
     },
     // 4
     {
         speaker: "주인공",
         text: "2036년...? 무슨 소리죠?",
-        audio: "audio/protagonist_2.wav"
+        audio: "audio/protagonist_2.mp3"
     },
     // 5
     {
         speaker: "의사",
         text: "많이 달라졌겠지만 곧 익숙해질 겁니다.",
-        audio: "audio/doctor_2.wav"
+        audio: "audio/doctor_2.mp3"
     },
     // 6
     {
@@ -293,25 +293,25 @@ const storyScript = [
     {
         speaker: "주인공",
         text: "누군가 119 좀 불러주세요!",
-        audio: "audio/protagonist_3.wav"
+        audio: "audio/protagonist_3.mp3"
     },
     // 11
     {
         speaker: "행인",
         text: "왜요?",
-        audio: "audio/pedestrian_1.wav"
+        audio: "audio/pedestrian_1.mp3"
     },
     // 12
     {
         speaker: "주인공",
         text: "죽을 수도 있잖아요!",
-        audio: "audio/protagonist_4.wav"
+        audio: "audio/protagonist_4.mp3"
     },
     // 13
     {
         speaker: "행인",
         text: "죽으면 업로드하면 되는데요?",
-        audio: "audio/pedestrian_2.wav",
+        audio: "audio/pedestrian_2.mp3",
         action: () => {
             shakeScreen();
             flashScreen();
@@ -323,19 +323,19 @@ const storyScript = [
     {
         speaker: "행인",
         text: "곧 죽겠네.",
-        audio: "audio/pedestrian_3.wav"
+        audio: "audio/pedestrian_3.mp3"
     },
     // 15
     {
         speaker: "다른 행인",
         text: "이주는 해놨겠지…",
-        audio: "audio/pedestrian_4.wav"
+        audio: "audio/pedestrian_4.mp3"
     },
     // 16
     {
         speaker: "주인공",
         text: "...?",
-        audio: "audio/protagonist_5.wav",
+        audio: "audio/protagonist_5.mp3",
         nextIndex: 17
     },
 
@@ -365,25 +365,25 @@ const storyScript = [
     {
         speaker: "주인공",
         text: "이게... 장례식라고? 사람이 왜 이렇게 없지?",
-        audio: "audio/protagonist_6.wav"
+        audio: "audio/protagonist_6.mp3"
     },
     // 22
     {
         speaker: "상주",
         text: "다들 직접 오진 않고 '추모 메시지'만 보냈으니까요. 어차피 AI가 고인 말투로 자동 답장해주잖아요.",
-        audio: "audio/sangju_1.wav"
+        audio: "audio/sangju_1.mp3"
     },
     // 23
     {
         speaker: "주인공",
         text: "자동 답장이라니... 다들 슬프지도 않은 건가요?",
-        audio: "audio/protagonist_7.wav"
+        audio: "audio/protagonist_7.mp3"
     },
     // 24
     {
         speaker: "조문객",
         text: "요즘 누가 번거롭게 삼일장을 치러요. 반나절이면 다 끝나는 '이주식'이 보편화된 지 오래인데.",
-        audio: "audio/visitor_1.wav"
+        audio: "audio/visitor_1.mp3"
     },
     // 25
     {
@@ -398,19 +398,19 @@ const storyScript = [
     {
         speaker: "지인의 복제본",
         text: "와줘서 고마워. 다들 너무 슬퍼하지 마. 어차피 이렇게 복제본 잘 만들어 놨으니 괜찮아.",
-        audio: "audio/clone_1.wav"
+        audio: "audio/clone_1.mp3"
     },
     // 27
     {
         speaker: "주인공",
         text: "너... 죽은 거 아니었어?",
-        audio: "audio/protagonist_8.wav"
+        audio: "audio/protagonist_8.mp3"
     },
     // 28
     {
         speaker: "지인의 복제본",
         text: "내 몸은 죽었지만 내 기억과 의식은 넘어와서 살아 있는거라고 할 수 있지. 죽음은 이제 이별이 아니라 또 다른 만남일 뿐이야.",
-        audio: "audio/clone_2.wav"
+        audio: "audio/clone_2.mp3"
     },
     // 29
     {
@@ -448,25 +448,25 @@ const storyScript = [
     {
         speaker: "지인의 복제본",
         text: "오랜만이야, 너보다 내가 먼저 죽었네",
-        audio: "audio/clone_3.wav"
+        audio: "audio/clone_3.mp3"
     },
     // 33
     {
         speaker: "주인공",
         text: "어... 그래. 네가 죽었다는 게 아직도 실감이 안 나는데, 이렇게 눈앞에서 목소리를 들으니까 기분이 이상하네.",
-        audio: "audio/protagonist_9.wav"
+        audio: "audio/protagonist_9.mp3"
     },
     // 34
     {
         speaker: "지인의 복제본",
         text: "너무 슬퍼 마, 복제본 잘 만들어 놨잖아. 죽기 전에 의식과 기억을 미리 다 옮겨놨거든.",
-        audio: "audio/clone_4.wav"
+        audio: "audio/clone_4.mp3"
     },
     // 35
     {
         speaker: "주인공",
         text: "그래... 이렇게라도 계속 이야기할 수 있다면 좋은 거겠지...",
-        audio: "audio/protagonist_10.wav"
+        audio: "audio/protagonist_10.mp3"
     },
     // 36
     {
@@ -500,19 +500,19 @@ const storyScript = [
     {
         speaker: "주인공",
         text: "아니... 거절할게. 넌 내 친구의 기억을 가졌지만, 진짜 내 친구는 아니야.",
-        audio: "audio/protagonist_11.wav"
+        audio: "audio/protagonist_11.mp3"
     },
     // 43
     {
         speaker: "지인의 복제본",
         text: "왜 그래? 난 너랑 이렇게 대화할 수 있고, 예전과 똑같이 생각하고 반응하는데. 죽음은 이제 끝이 아니잖아.",
-        audio: "audio/clone_5.wav"
+        audio: "audio/clone_5.mp3"
     },
     // 44
     {
         speaker: "주인공",
         text: "그건 가짜 위로일 뿐이야. 네 육신이 죽었는데 끝없이 대화하는 건, 진정한 작별을 회피하는 거라고.",
-        audio: "audio/protagonist_12.wav"
+        audio: "audio/protagonist_12.mp3"
     },
     // 45
     {
