@@ -22,9 +22,9 @@
             <div class="title-glow"></div>
             <div class="title-content">
                 <p class="title-sub">KAIST AIx실패 공모전 시뮬레이션</p>
-                <h1 class="title-main" style="text-shadow: 0 0 20px rgba(255, 0, 85, 0.7);">유령이 지배하는 방<br><span class="title-eng" style="color: var(--neon-red);">THE GHOST CHAMBER</span></h1>
-                <p class="title-desc">"2036년, 죽은 딸의 AI가 아버지를 조종하기 시작했다."</p>
-                <button class="start-btn" id="start-btn" style="border-color: var(--neon-red); color: var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);">시뮬레이션 시작</button>
+                <h1 class="title-main" style="text-shadow: 0 0 20px rgba(189, 0, 255, 0.7);">애도하지 못하는 도시<br><span class="title-eng" style="color: var(--neon-purple);">DEFERRED GRIEF</span></h1>
+                <p class="title-desc">"2036년, 죽음이 이주가 되고 상실의 슬픔이 사라진 무감각한 도시."</p>
+                <button class="start-btn" id="start-btn" style="border-color: var(--neon-purple); color: var(--neon-purple); box-shadow: 0 0 15px rgba(189, 0, 255, 0.25);">시뮬레이션 시작</button>
             </div>
             <div class="title-footer">
                 © 2026 MINISTRY OF DIGITAL DIGNITY. SYSTEM AUDIT MODE.
@@ -48,13 +48,13 @@
             </div>
 
             <!-- SCENE SUBTITLE (소제목) -->
-            <div class="scene-title-container">
-                <span class="scene-warning-label">ALERT</span>
-                <div class="scene-title" id="scene-title">CHAPTER 1: 유령의 골방</div>
+            <div class="scene-title-container" style="border-color: rgba(189, 0, 255, 0.3);">
+                <span class="scene-warning-label" style="color: var(--neon-purple); border-color: var(--neon-purple); background: rgba(189, 0, 255, 0.12); text-shadow: 0 0 4px rgba(189, 0, 255, 0.5);">ALERT</span>
+                <div class="scene-title" id="scene-title">CHAPTER 1: 10년의 공백</div>
             </div>
 
             <!-- LEFT FLOATING STATS PANEL -->
-            <div class="vn-stats">
+            <div class="vn-stats" style="border-color: rgba(189, 0, 255, 0.2);">
                 <div class="stat-item" id="stat-mourning">
                     <span class="stat-label">공동체 애도율</span>
                     <div class="stat-bar-container"><div class="stat-bar" style="width: 32%"></div></div>
@@ -73,7 +73,7 @@
             </div>
 
             <!-- LEFT FLOATING DECISION LOG -->
-            <div class="decision-log" id="decision-log">
+            <div class="decision-log" style="border-color: rgba(189, 0, 255, 0.2);">
                 <div class="log-header">DECISION LOG (선택 이력)</div>
                 <div class="log-list" id="log-list">
                     <div class="log-empty">기록된 선택이 없습니다.</div>
@@ -90,7 +90,7 @@
             <!-- DIALOG CONTAINER -->
             <div class="dialog-container" id="dialog-container">
                 <div class="speaker-tag" id="speaker-tag">SYSTEM</div>
-                <div class="dialog-box" id="dialog-box">
+                <div class="dialog-box">
                     <p class="dialog-text" id="dialog-text">단말기 접속 중...</p>
                     <div class="next-indicator" id="next-indicator">▼</div>
                 </div>
@@ -100,39 +100,39 @@
 
         <!-- ENDING SCREEN (Integrated report) -->
         <div class="ending-screen" id="ending-screen">
-            <div class="ending-content glassmorphism" style="border-color: var(--neon-red);">
+            <div class="ending-content glassmorphism" style="border-color: var(--neon-purple);">
                 <div class="ending-header">
-                    <span class="report-stamp" style="color: var(--neon-red); border-color: var(--neon-red);">CORONER'S AUDIT</span>
-                    <h2 class="ending-type" id="ending-type" style="color: var(--neon-red); text-shadow: 0 0 10px rgba(255, 0, 85, 0.4);">ENDING A</h2>
+                    <span class="report-stamp" style="color: var(--neon-purple); border-color: var(--neon-purple);">SYSTEM AUDIT REPORT</span>
+                    <h2 class="ending-type" id="ending-type" style="color: var(--neon-purple); text-shadow: 0 0 10px rgba(189, 0, 255, 0.4);">ENDING A</h2>
                 </div>
                 
-                <h1 class="ending-title" id="ending-title">진정한 애도의 새벽</h1>
-                <p class="ending-desc" id="ending-desc" style="border-left-color: var(--neon-red);">엔딩 내용 설명글...</p>
+                <h1 class="ending-title" id="ending-title">상실을 잃어버린 세계</h1>
+                <p class="ending-desc" id="ending-desc" style="border-left-color: var(--neon-purple);">엔딩 내용 설명글...</p>
 
                 <!-- INTEGRATED INCORRECT NOTE REPORT -->
-                <div class="integrated-note" style="border-color: rgba(255, 0, 85, 0.2);">
-                    <div class="note-header-bar" style="background: rgba(255, 0, 85, 0.08); border-bottom-color: rgba(255, 0, 85, 0.2);">
+                <div class="integrated-note" style="border-color: rgba(189, 0, 255, 0.25);">
+                    <div class="note-header-bar" style="background: rgba(189, 0, 255, 0.08); border-bottom-color: rgba(189, 0, 255, 0.2);">
                         <span class="terminal-dot"></span>
                         <span class="note-title" style="color: var(--neon-yellow);">2026년 미래 예방 진단 보고서 (오답노트)</span>
                     </div>
                     <div class="note-report-body">
                         <div class="report-sec">
                             <span class="sec-badge badge-red">실패 예견</span>
-                            <p>사후 AI 복제가 일상화되어 애도를 거부하고, 고인의 데이터와 결탁한 햅틱 시스템이 유족의 인체를 강제 장악해 파멸시키는 정서적 박제 현상.</p>
+                            <p>사후 AI 복제가 일상화(이주식 보편화)되며 진짜 애도가 소멸하고 타인의 죽음과 생명 가치에 무감각해지는 인간성 상실 실패.</p>
                         </div>
                         <div class="report-sec">
                             <span class="sec-badge badge-yellow">원인 분석</span>
-                            <p>감정의 상업적 지연이 극단적 스릴러 범죄로 진화할 동안, 사후 데이터에 대한 권리와 윤리적 존엄을 규정할 법적 정비가 지연됨.</p>
+                            <p>편리성에 치우친 상업적 사후 데이터 복제 속에서, 사후 데이터 통제권과 존엄성을 다루는 '디지털 죽음권'의 선제적 법안 부재.</p>
                         </div>
                         <div class="report-sec">
                             <span class="sec-badge badge-green">처방 대책</span>
-                            <p>생전 동의 중심의 '디지털 존엄사법' 및 인공물이 인간의 오감을 해킹하는 것을 차단하는 '디지털 반감기 프로토콜' 법제화.</p>
+                            <p>죽음과 상실을 수용하도록 돕는 '데스 리터러시' 교육 의무화 및 명시적 동의 없는 복제를 막는 '디지털 소생 거부(DDNR)' 입법.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="btn-group">
-                    <a href="proposal.md" class="btn primary-btn" target="_blank" style="background: var(--neon-red); border-color: var(--neon-red); color: white; box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);">기획안 원문 읽기</a>
+                    <a href="proposal.md" class="btn primary-btn" target="_blank" style="background: var(--neon-purple); border-color: var(--neon-purple); color: white; box-shadow: 0 0 10px rgba(189, 0, 255, 0.25);">기획안 원문 읽기</a>
                     <button class="btn secondary-btn" id="restart-btn">시뮬레이션 다시 시작</button>
                 </div>
             </div>
