@@ -711,9 +711,13 @@ function evaluateEnding(endingType) {
     const elEndingType = document.getElementById('ending-type');
     const elEndingTitle = document.getElementById('ending-title');
     const elEndingDesc = document.getElementById('ending-desc');
+    const elNote = document.querySelector('.integrated-note');
 
     if (endingType === "B") {
-        // Ending B
+        // Ending B (Success) - Hide Incorrect Note
+        if (elNote) {
+            elNote.style.display = 'none';
+        }
         elEndingType.textContent = "ENDING B (인간성 사수)";
         elEndingTitle.textContent = "마지막 인간성을 지켜내다";
         elEndingDesc.innerHTML = `
@@ -723,7 +727,10 @@ function evaluateEnding(endingType) {
             애도할 권리를 되찾고 슬픔을 피하지 않는 것, 그것이 당신이 지켜내고자 한 진정한 삶의 무게였습니다.
         `;
     } else {
-        // Ending A
+        // Ending A (Failure) - Show Incorrect Note
+        if (elNote) {
+            elNote.style.display = 'block';
+        }
         elEndingType.textContent = "ENDING A (가치의 소멸)";
         elEndingTitle.textContent = "상실을 잃어버린 세계";
         elEndingDesc.innerHTML = `
