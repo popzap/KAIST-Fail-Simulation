@@ -29,7 +29,6 @@ const elSoundBtn = document.getElementById('sound-btn');
 const elLogList = document.getElementById('log-list');
 const elSceneTitle = document.getElementById('scene-title');
 const elVnStage = document.getElementById('vn-stage');
-const elCharacterSprite = document.getElementById('character-sprite');
 
 // STAT BARS
 const barMourning = document.querySelector('#stat-mourning .stat-bar');
@@ -629,29 +628,6 @@ function renderDialogueStep() {
         elSceneTitle.textContent = step.sceneTitle;
     }
 
-    // Update character silhouette
-    if (elCharacterSprite) {
-        let silhouetteFile = "";
-        if (step.speaker === "주인공") {
-            silhouetteFile = "protagonist_silhouette.png";
-        } else if (step.speaker === "의사") {
-            silhouetteFile = "doctor_silhouette.png";
-        } else if (step.speaker === "지인의 복제본") {
-            silhouetteFile = "clone_silhouette.png";
-        } else if (["행인", "다른 행인", "상주", "조문객"].includes(step.speaker)) {
-            silhouetteFile = "pedestrian_silhouette.png";
-        }
-
-        if (silhouetteFile) {
-            elCharacterSprite.style.backgroundImage = `url('${silhouetteFile}')`;
-            elCharacterSprite.classList.add('active');
-            elCharacterSprite.classList.add('speaking');
-        } else {
-            elCharacterSprite.classList.remove('active');
-            elCharacterSprite.classList.remove('speaking');
-        }
-    }
-
     // Switch Background Image Dynamically
     if (step.background) {
         elVnStage.style.backgroundImage = `url('${step.background}')`;
@@ -737,12 +713,6 @@ function evaluateEnding(endingType) {
     }
     if (ttsSynth) ttsSynth.cancel();
 
-    // Hide silhouette on ending
-    if (elCharacterSprite) {
-        elCharacterSprite.classList.remove('active');
-        elCharacterSprite.classList.remove('speaking');
-    }
-
     elPlayScreen.classList.remove('active');
     elEndingScreen.classList.add('active');
 
@@ -779,12 +749,6 @@ function restartGame() {
         currentAudio = null;
     }
     if (ttsSynth) ttsSynth.cancel();
-
-    // Hide silhouette on restart
-    if (elCharacterSprite) {
-        elCharacterSprite.classList.remove('active');
-        elCharacterSprite.classList.remove('speaking');
-    }
 
     state.mourning = 32;
     state.dependent = 45;
