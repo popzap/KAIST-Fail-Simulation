@@ -38,52 +38,15 @@ const valDependent = document.querySelector('#stat-dependent .stat-value');
 const barCompliance = document.querySelector('#stat-compliance .stat-bar');
 const valCompliance = document.querySelector('#stat-compliance .stat-value');
 
-// WEB AUDIO BGM SYNTHESIZER (Moody, dark atmospheric drone)
-let audioCtx = null;
-let synthGain = null;
-let oscillators = [];
+// BGM PLAYER FOR bgm1.mp3
+let bgmAudio = null;
 let isMuted = true;
 
-function initSynth() {
-    if (audioCtx) return;
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    
-    const filter = audioCtx.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(220, audioCtx.currentTime); // low-pass filter
-    
-    synthGain = audioCtx.createGain();
-    synthGain.gain.setValueAtTime(0, audioCtx.currentTime);
-    
-    const frequencies = [82.4, 110, 164.81, 220]; // E2, A2, E3, A3
-    frequencies.forEach((freq, idx) => {
-        const osc = audioCtx.createOscillator();
-        const oscGain = audioCtx.createGain();
-        
-        osc.type = idx % 2 === 0 ? 'sine' : 'triangle';
-        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-        osc.detune.setValueAtTime(idx * 4 - 6, audioCtx.currentTime);
-        
-        oscGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-        
-        osc.connect(oscGain);
-        oscGain.connect(filter);
-        oscillators.push(osc);
-    });
-    
-    const lfo = audioCtx.createOscillator();
-    lfo.frequency.setValueAtTime(0.08, audioCtx.currentTime); // slow breathing LFO
-    const lfoGain = audioCtx.createGain();
-    lfoGain.gain.setValueAtTime(0.03, audioCtx.currentTime);
-    
-    lfo.connect(lfoGain);
-    lfoGain.connect(synthGain.gain);
-    
-    filter.connect(synthGain);
-    synthGain.connect(audioCtx.destination);
-    
-    oscillators.forEach(osc => osc.start());
-    lfo.start();
+function initBgm() {
+    if (bgmAudio) return;
+    bgmAudio = new Audio('audio/bgm1.mp3');
+    bgmAudio.loop = true;
+    bgmAudio.volume = 0.25; // Clean background volume level
 }
 
 function toggleSound() {
@@ -91,18 +54,17 @@ function toggleSound() {
     
     if (isMuted) {
         elSoundBtn.textContent = "🔇 BGM OFF";
-        if (synthGain) {
-            synthGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
+        if (bgmAudio) {
+            bgmAudio.pause();
         }
     } else {
         elSoundBtn.textContent = "🔊 BGM ON";
-        if (!audioCtx) {
-            initSynth();
+        if (!bgmAudio) {
+            initBgm();
         }
-        if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-        }
-        synthGain.gain.linearRampToValueAtTime(0.08, audioCtx.currentTime + 0.8);
+        bgmAudio.play().catch(e => {
+            console.log("BGM autoplay delayed until user interaction:", e);
+        });
     }
 }
 
